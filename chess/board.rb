@@ -2,25 +2,18 @@ require_relative 'piece'
 require_relative 'nullpiece'
 
 class Board
+  attr_accessor :board
+
   def initialize
     @board = Array.new(8) { Array.new(8) { [] } }
     @board[0][0] = Piece.new
     @board[0][1] = Piece.new
   end
 
-  def render
-    @board.each do |row|
-      row = row.map do |tile|
-        if tile.is_a?(Piece)
-          "P"
-        else
-          " "
-        end
-      end
 
-      puts row.join(" | ")
-      puts "*" * 30
-    end
+  def [](pos)
+    x , y = pos
+    @board[x][y]
   end
 
   def move(start,end_pos)
