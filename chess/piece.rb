@@ -1,7 +1,11 @@
-class Piece
-  attr_accessor :highlight
+require_relative 'board'
 
-  def initialize
+class Piece
+  attr_accessor :highlight, :name, :pos
+
+  def initialize(name, pos)
+    @name = name
+    @pos = pos
     @highlight = false
   end
 
