@@ -18,6 +18,7 @@ class Board
       self.board[0][5] = Bishop.new([0,5], color)
       self.board[0][6] = Knight.new([0,6], color)
       self.board[0][7] = Rook.new([0,7], color)
+      self.board[3][4] = Rook.new([3,4], color)
     color = 'white'
       self.board[7][0] = Rook.new([7,0], color)
       self.board[7][1] = Knight.new([7,1], color)
@@ -27,6 +28,7 @@ class Board
       self.board[7][5] = Bishop.new([7,5], color)
       self.board[7][6] = Knight.new([7,6], color)
       self.board[7][7] = Rook.new([7,7], color)
+      self.board[5][2] = Rook.new([5,2], color)
   end
 
   def [](pos)
@@ -36,9 +38,14 @@ class Board
 
   def move(start,end_pos)
     x , y = start
+    self.board[x][y].valid_moves(@board)
+
     i , j = end_pos
     raise "There's no piece here" unless @board[x][y].is_a?(Piece)
     raise "There's already a piece here" if @board[i][j].is_a?(Piece)
     @board[x][y], @board[i][j] = @board[i][j], @board[x][y]
+  end
+
+  def valid_move
   end
 end

@@ -12,7 +12,8 @@ class Piece
     'P'
   end
 
-  def valid_moves?(board)
-
+  def valid_moves(board)
+    moves = self.moves
+    valid_moves = []
   end
 end
