@@ -1,4 +1,4 @@
-require_relative 'piece'
+require_relative 'pieces'
 require_relative 'nullpiece'
 
 class Board
@@ -24,3 +24,5 @@ class Board
     @board[x][y], @board[i][j] = @board[i][j], @board[x][y]
   end
 end
+
+rook = Rook.new

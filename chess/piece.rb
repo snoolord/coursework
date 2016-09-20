@@ -1,5 +1,3 @@
-require_relative 'board'
-
 class Piece
   attr_accessor :highlight, :name, :pos
 
@@ -11,5 +9,9 @@ class Piece
 
   def highlight_toggle
     @highlight ? @highlight = false : @highlight = true
+  end
+
+  def valid_moves?(board)
+
   end
 end
