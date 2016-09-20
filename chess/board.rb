@@ -20,7 +20,7 @@ class Board
       self.board[x][7] = Rook.new([x,7])
     end
 
-    p @board
+    @board
   end
 
   def [](pos)
@@ -36,6 +36,3 @@ class Board
     @board[x][y], @board[i][j] = @board[i][j], @board[x][y]
   end
 end
-
-board = Board.new
-board.setup_board

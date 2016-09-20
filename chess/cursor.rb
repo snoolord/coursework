@@ -42,7 +42,7 @@ class Cursor
 
   def get_input
     key = KEYMAP[read_char]
-    update_pos(handle_key(key))
+    handle_key(key)
   end
 
   private
@@ -78,7 +78,7 @@ class Cursor
 
   def handle_key(key)
     shift = MOVES[key]
-
+    update_pos(shift)
   end
 
   def update_pos(diff)

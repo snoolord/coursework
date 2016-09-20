@@ -5,8 +5,8 @@ class NullPiece
 
   attr_accessor :highlight
 
-  def initialize
-    @highlight = false
+  def to_s
+    return ' '
   end
 
   def highlight_toggle

@@ -7,6 +7,10 @@ class Piece
     @highlight = false
   end
 
+  def to_s
+    'P'
+  end
+
   def highlight_toggle
     @highlight ? @highlight = false : @highlight = true
   end
