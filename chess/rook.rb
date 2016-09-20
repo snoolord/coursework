@@ -7,7 +7,7 @@ class Rook < Piece
   end
 
   def to_s
-    @color == 'black' ? '♖' : '♜'
+    @color == 'black' ? '♜'.colorize(:black) : '♜'
   end
 
   def moves
