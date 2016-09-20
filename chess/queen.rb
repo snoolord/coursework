@@ -1,7 +1,7 @@
 class Queen < Piece
   include Slidable
-  def initialize
-    super("queen", [5,5])
+  def initialize(pos)
+    super("queen", pos)
   end
 
   def moves

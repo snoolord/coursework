@@ -37,3 +37,8 @@ class Display
     end
   end
 end
+
+board = Board.new
+board.setup_board
+display = Display.new(board)
+display.check_cursor
