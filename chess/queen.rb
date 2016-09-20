@@ -1,7 +1,11 @@
 class Queen < Piece
   include Slidable
-  def initialize(pos)
-    super("queen", pos)
+  def initialize(pos, color)
+    super("queen", pos, color)
+  end
+
+  def to_s
+    @color == 'black' ? '♕' : '♛'
   end
 
   def moves

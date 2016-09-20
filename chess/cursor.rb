@@ -37,7 +37,6 @@ class Cursor
   def initialize(cursor_pos, board)
     @cursor_pos = cursor_pos
     @board = board
-    @board[@cursor_pos].highlight_toggle
   end
 
   def get_input
@@ -85,9 +84,6 @@ class Cursor
   def update_pos(diff)
     x, y = diff
     i, j = @cursor_pos
-    p @board[@cursor_pos]
-    @board[@cursor_pos].highlight_toggle
     @cursor_pos = [x+i, y+j]
-    @board[@cursor_pos].highlight_toggle
   end
 end

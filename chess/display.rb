@@ -30,12 +30,16 @@ class Display
     #   puts "*" * 30
     # end
     @board.board.each_with_index do |row, rindex|
+      rindex.even? ? color = :light_black : color = :light_blue
       row.each_with_index do |column, cindex|
+        color == :light_black ? color = :light_blue : color = :light_black
+        print ' '.colorize(:background => color)
         if [rindex, cindex] == @cursor.cursor_pos
-          print column.to_s.colorize(:background => :light_blue)
+          print column.to_s.colorize(:background => :green)
         else
-          print column
+          print column.to_s.colorize(:background => color)
         end
+        print ' '.colorize(:background => color)
       end
       puts
     end
@@ -51,9 +55,8 @@ class Display
         position = @cursor.cursor_pos
         cursor = false
       end
+      system('clear')
     end
-    puts "YES"
-
     position
   end
 end

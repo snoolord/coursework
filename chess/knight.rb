@@ -5,7 +5,7 @@ class Knight < Piece
   end
 
   def to_s
-    '♘'
+    @color == 'black' ? '♘' : '♞' 
   end
 
   def moves

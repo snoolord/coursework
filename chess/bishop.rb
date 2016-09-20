@@ -4,6 +4,10 @@ class Bishop < Piece
     super("bishop", pos, color)
   end
 
+  def to_s
+    @color == 'black' ? '♗' : '♝' 
+  end
+
   def moves
     self.diagonal_moves
   end

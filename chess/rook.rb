@@ -6,6 +6,10 @@ class Rook < Piece
     super("rook", pos, color)
   end
 
+  def to_s
+    @color == 'black' ? '♖' : '♜'
+  end
+
   def moves
     self.vertical_and_horizontal_moves
   end

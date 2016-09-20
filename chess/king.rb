@@ -6,6 +6,10 @@ class King < Piece
     super("king", pos, color)
   end
 
+  def to_s
+    @color == 'black' ? '♔' : '♚' 
+  end
+
   def moves
     self.king_moves
   end
