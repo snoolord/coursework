@@ -22,3 +22,5 @@ module Slidable
       possible_moves << [x + index, y - index]
       possible_moves << [x - index, y - index]
     end
+  end
+end
