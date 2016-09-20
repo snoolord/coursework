@@ -2,8 +2,8 @@ require_relative 'piece'
 require_relative 'stepping_piece'
 class King < Piece
   include Steppable
-  def initialize(pos)
-    super("king", pos)
+  def initialize(pos, color)
+    super("king", pos, color)
   end
 
   def moves

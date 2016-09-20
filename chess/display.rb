@@ -4,7 +4,7 @@ require_relative 'board'
 
 
 class Display
-  attr_accessor :cursor
+  attr_accessor :cursor, :board
   def initialize(board)
     @cursor = Cursor.new([0,0], board)
     @board = board
@@ -41,7 +41,7 @@ class Display
     end
   end
 
-  def check_cursor
+  def get_move
     cursor = true
     while cursor
       render
@@ -53,10 +53,7 @@ class Display
       end
     end
     puts "YES"
+
+    position
   end
 end
-
-board = Board.new
-board.setup_board
-display = Display.new(board)
-display.check_cursor

@@ -1,7 +1,7 @@
 class Bishop < Piece
   include Slidable
-  def initialize(pos)
-    super("bishop", pos)
+  def initialize(pos, color)
+    super("bishop", pos, color)
   end
 
   def moves

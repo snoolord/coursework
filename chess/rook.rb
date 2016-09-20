@@ -2,8 +2,8 @@ require_relative 'piece'
 require_relative 'sliding_piece'
 class Rook < Piece
   include Slidable
-  def initialize(pos)
-    super("rook", pos)
+  def initialize(pos, color)
+    super("rook", pos, color)
   end
 
   def moves
