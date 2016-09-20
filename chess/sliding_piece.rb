@@ -17,10 +17,10 @@ module Slidable
     x,y = self.pos
     possible_moves = []
     left, right, down_left, down_right = [], [], [], []
-    (1..7).each { |index| left << [x + index, y + index] }
-    (1..7).each { |index| right << [x + index, y - index] }
-    (1..7).each { |index| down_left << [x - index, y + index] }
-    (1..7).each { |index| down_right << [x - index, y - index] }
+    (1..7).each { |index| left << [x - index, y - index] }
+    (1..7).each { |index| right << [x - index, y + index] }
+    (1..7).each { |index| down_left << [x + index, y - index] }
+    (1..7).each { |index| down_right << [x + index, y + index] }
     possible_moves << left << right << down_left << down_right
     possible_moves
   end

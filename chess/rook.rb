@@ -12,5 +12,3 @@ class Rook < Piece
   end
 
 end
-
-rook = Rook.new
