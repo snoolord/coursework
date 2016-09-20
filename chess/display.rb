@@ -39,15 +39,20 @@ class Display
       end
       puts
     end
-
-
   end
+
   def check_cursor
-    while true
+    cursor = true
+    while cursor
       render
       input = @cursor.get_input
-      system('clear')
+      p input
+      if input == :return
+        position = @cursor.cursor_pos
+        cursor = false
+      end
     end
+    puts "YES"
   end
 end
 

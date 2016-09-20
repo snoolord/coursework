@@ -42,6 +42,7 @@ class Cursor
 
   def get_input
     key = KEYMAP[read_char]
+    return key if key == :return || key == :tab
     handle_key(key)
   end
 
