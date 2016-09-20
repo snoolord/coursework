@@ -1,11 +1,17 @@
 class Piece
-  attr_accessor :highlight
+  attr_accessor :highlight, :name, :pos
 
-  def initialize
-    @highlight = false
+  def initialize(name, pos, color)
+    @name = name
+    @pos = pos
+    @color = color
   end
 
-  def highlight_toggle
-    @highlight ? @highlight = false : @highlight = true
+  def to_s
+    'P'
+  end
+
+  def valid_moves?(board)
+
   end
 end

@@ -1,13 +1,11 @@
 require 'singleton'
 
 class NullPiece
-  attr_accessor :highlight
+  include Singleton
 
-  def initialize
-    @highlight = false
+  def to_s
+    return ' '
   end
-  
-  def highlight_toggle
-    @highlight ? @highlight = false : @highlight = true
-  end
+
+
 end

@@ -22,26 +22,3 @@ module Slidable
       possible_moves << [x + index, y - index]
       possible_moves << [x - index, y - index]
     end
-    possible_moves
-  end
-
-end
-#
-# ########
-# require 'slidable'
-#
-# class Rook < Piece
-#   include slidable
-#   def initialize
-#     super("rook")
-#     @move_dirs = [[-1, 0], [1, 0]]
-#   end
-# end
-#
-# # Piece <- SlidingPiece <- Rook
-# #
-# # s = SlidingPiece.new()
-# # s.move
-#
-# r = Rook.new
-# r.move

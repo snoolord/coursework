@@ -37,12 +37,12 @@ class Cursor
   def initialize(cursor_pos, board)
     @cursor_pos = cursor_pos
     @board = board
-    @board[@cursor_pos].highlight_toggle
   end
 
   def get_input
     key = KEYMAP[read_char]
-    update_pos(handle_key(key))
+    return key if key == :return || key == :tab
+    handle_key(key)
   end
 
   private
@@ -78,15 +78,12 @@ class Cursor
 
   def handle_key(key)
     shift = MOVES[key]
-
+    update_pos(shift)
   end
 
   def update_pos(diff)
     x, y = diff
     i, j = @cursor_pos
-    p @board[@cursor_pos]
-    @board[@cursor_pos].highlight_toggle
     @cursor_pos = [x+i, y+j]
-    @board[@cursor_pos].highlight_toggle
   end
 end

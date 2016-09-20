@@ -1,15 +1,33 @@
-require_relative 'piece'
+require_relative 'pieces'
 require_relative 'nullpiece'
 
 class Board
   attr_accessor :board
 
   def initialize
-    @board = Array.new(8) { Array.new(8) { [] } }
-    @board[0][0] = Piece.new
-    @board[0][1] = Piece.new
+    @board = Array.new(8) { Array.new(8) { NullPiece.instance } }
   end
 
+  def setup_board
+    color = 'black'
+      self.board[0][0] = Rook.new([0,0], color)
+      self.board[0][1] = Knight.new([0,1], color)
+      self.board[0][2] = Bishop.new([0,2], color)
+      self.board[0][3] = King.new([0,3], color)
+      self.board[0][4] = Queen.new([0,4], color)
+      self.board[0][5] = Bishop.new([0,5], color)
+      self.board[0][6] = Knight.new([0,6], color)
+      self.board[0][7] = Rook.new([0,7], color)
+    color = 'white'
+      self.board[7][0] = Rook.new([7,0], color)
+      self.board[7][1] = Knight.new([7,1], color)
+      self.board[7][2] = Bishop.new([7,2], color)
+      self.board[7][3] = King.new([7,3], color)
+      self.board[7][4] = Queen.new([7,4], color)
+      self.board[7][5] = Bishop.new([7,5], color)
+      self.board[7][6] = Knight.new([7,6], color)
+      self.board[7][7] = Rook.new([7,7], color)
+  end
 
   def [](pos)
     x , y = pos
