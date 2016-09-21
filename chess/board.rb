@@ -38,9 +38,9 @@ class Board
 
   def move(start,end_pos)
     x , y = start
-    self.board[x][y].valid_moves(@board)
-
     i , j = end_pos
+    valid_moves = self.board[x][y].valid_moves(@board)
+    
     raise "There's no piece here" unless @board[x][y].is_a?(Piece)
     raise "There's already a piece here" if @board[i][j].is_a?(Piece)
     @board[x][y], @board[i][j] = @board[i][j], @board[x][y]

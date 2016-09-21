@@ -10,7 +10,7 @@ class Player
     start_pos = @display.get_move
     end_pos = @display.get_move
     @display.board.move(start_pos, end_pos)
-    system('clear')
+    # system('clear')
     @display.render
   end
 

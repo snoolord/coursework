@@ -55,7 +55,7 @@ class Display
         position = @cursor.cursor_pos
         cursor = false
       end
-      system('clear')
+      # system('clear')
     end
     position
   end
