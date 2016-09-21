@@ -18,7 +18,7 @@ class Player
 end
 
 board = Board.new
-board.setup_board
+board.setup_grid
 display = Display.new(board)
 player = Player.new(display)
 player.get_input

@@ -29,7 +29,7 @@ class Display
     #   puts row.join(" | ")
     #   puts "*" * 30
     # end
-    @board.board.each_with_index do |row, rindex|
+    @board.grid.each_with_index do |row, rindex|
       rindex.even? ? color = :light_black : color = :light_blue
       row.each_with_index do |column, cindex|
         color == :light_black ? color = :light_blue : color = :light_black

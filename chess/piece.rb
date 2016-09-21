@@ -12,7 +12,7 @@ class Piece
     'P'
   end
 
-  def valid_moves(board)
+  def valid_moves(grid)
     moves = self.moves
     valid_moves = []
 
@@ -20,7 +20,7 @@ class Piece
 
     moves.each do |pair_array|
       pair_array.each do |pair|
-        piece_check = board[pair[0]][pair[1]]
+        piece_check = grid[pair[0]][pair[1]]
         if piece_check.is_a?(Piece)
           if piece_check.color != self.color
             valid_moves << pair
